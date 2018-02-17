@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Naver Comment Cleaner",
-    "version": "1.0",
+    "version": "1.0.1",
     "description": "네이버 뉴스에서 기분을 언짢게 하는 댓글을 숨겨줍니다.",
     "icons": {
         "128": "icon128.png",
@@ -14,7 +14,7 @@
     "content_scripts": [
         {
             "matches": [
-                "http://news.naver.com/*",
+                "http://*.news.naver.com/*",
                 "http://entertain.naver.com/*"
             ],
             "js": ["jquery-3.3.1.min.js", "content.js"],
