@@ -1,4 +1,4 @@
-# NaverCommentCleaner
+# CleanNaver
 
 
 ### 만들게된 계기
@@ -17,6 +17,9 @@ https://chrome.google.com/webstore/detail/naver-comment-cleaner/dfbinefheanbhake
 <hr>
 <br>
 
+### 앞으로의 방향
+처음 시작은 네이버 뉴스의 댓글로 인해 시작했지만, 앞으로 한국인이 자주 사용하는 네이버를 깨끗하게 사용할수 있는 익스텐션으로 키워갈 생각입니다.
+
 ### 개발 참여 방법
 
 #### 관련 모듈 인스톨
@@ -28,3 +31,21 @@ $ npm install
 ```js
 $ npm run build
 ```
+
+#### 파일 추가시
+추가한 파일을 webpack.config.js의 entry 배열에 추가해줍니다.
+```js
+# webpack.config.js
+
+module.exports = {
+  mode: 'development',
+  target: 'web',
+  entry: [
+    './src/js/comment-manager.js',
+    './src/js/ad-manager.js'
+  ],
+  ....
+};
+```
+
+* 개발이 완료되면 pull request를 날려주세요 :)
