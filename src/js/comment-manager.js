@@ -1,7 +1,8 @@
 import jQuery from 'jquery';
-import _ from 'lodash';
 
-(function($) {
+let CleanNaver = window.CleanNaver || {};
+
+CleanNaver.commentManager = (function($) {
     
     let commentBox = $('#cbox_module');
     let commentGuideDiv = $('.comment_guide');

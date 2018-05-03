@@ -3,7 +3,10 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   target: 'web',
-  entry: ['./src/js/app.js'],
+  entry: [
+    './src/js/comment-manager.js',
+    './src/js/ad-manager.js'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
