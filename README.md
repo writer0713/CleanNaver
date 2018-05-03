@@ -1,5 +1,7 @@
 # NaverCommentCleaner
 
+
+### 만들게된 계기
 네이버 뉴스를 볼때면 하단의 댓글들이 너무 지저분해서 기분이 매우 언짢습니다. 
 개인적으로는 댓글에 안좋은 내용이 있을걸 알면서도 스크롤을 내리게 되더라구요. 
 그래서 크롬 익스텐션을 만들었습니다. 
@@ -8,3 +10,21 @@
 
 [Install Chrome Extension](
 https://chrome.google.com/webstore/detail/naver-comment-cleaner/dfbinefheanbhakekbeijfegpfapkemd?hl=ko)
+
+
+<br>
+<br>
+<hr>
+<br>
+
+### 개발 참여 방법
+
+#### 관련 모듈 인스톨
+```js
+$ npm install
+```
+
+#### 파일 수정후 빌드
+```js
+$ npm run build
+```
