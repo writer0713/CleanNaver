@@ -1,8 +1,11 @@
+import jQuery from 'jquery';
+import _ from 'lodash';
+
 (function($) {
     
-    this.commentBox = $('#cbox_module');
-    this.commentGuideDiv = $('.comment_guide');
-    this.toggleButtonDiv = $(`
+    let commentBox = $('#cbox_module');
+    let commentGuideDiv = $('.comment_guide');
+    let toggleButtonDiv = $(`
     <div class="tg-div">
         <ul class="tg-list">
             <li class="tg-list-item" id="nc_toggle_btn">
@@ -14,10 +17,10 @@
     </div>
     `);
 
-    this.commentBox.before(this.toggleButtonDiv);
-    this.commentBox.hide();
+    commentBox.before(toggleButtonDiv);
+    commentBox.hide();
 
-    this.commentGuideDiv.remove();
+    commentGuideDiv.remove();
     
     $('body').scrollTop();
 
@@ -27,9 +30,9 @@
         let isChecked = checkbox.prop('checked');
 
         if(isChecked) {
-            this.commentBox.show();
+            commentBox.show();
         } else {
-            this.commentBox.hide();
+            commentBox.hide();
         }
     });
 
