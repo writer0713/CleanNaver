@@ -5,7 +5,8 @@ module.exports = {
   target: 'web',
   entry: [
     './src/js/comment-manager.js',
-    './src/js/ad-manager.js'
+    './src/js/ad-manager.js',
+    './src/js/app.js',
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -20,7 +21,7 @@ module.exports = {
         use: {
             loader: "babel-loader",
             options: {
-                presets: ['env']
+                presets: ['env', 'es2015']
             }
         }
       }
