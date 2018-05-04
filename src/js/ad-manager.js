@@ -1,13 +1,22 @@
 // end_ad
 
-import jQuery from 'jquery';
+import $ from 'jquery';
 
-let CleanNaver = window.CleanNaver || {};
+export class AdManager {
 
-CleanNaver.adManager = (function($) {
-    
-    let advertisementDiv = $('.end_ad');
+    constructor() {
+        console.log('AdManager constructor');
 
-    advertisementDiv.remove();
+        this.initVariables();
+        this.removeAdvertisementDiv();
+    }
 
-})(jQuery);
+    initVariables() {
+        this.advertisementDiv = $('.end_ad');
+    }
+
+    removeAdvertisementDiv() {
+        this.advertisementDiv.remove();
+    }
+
+}
