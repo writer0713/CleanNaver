@@ -8,8 +8,8 @@
 이 익스텐션을 설치하면 기본적으로 뉴스 하단의 댓글을 가려줍니다. 
 그리고 보고싶을 경우에는 '보이기' 버튼을 누르면 됩니다.
 
-[Install Chrome Extension](
-https://chrome.google.com/webstore/detail/naver-comment-cleaner/dfbinefheanbhakekbeijfegpfapkemd?hl=ko)
+[( 크롬 익스텐션 바로 가기 : Install Chrome Extension )](
+https://chrome.google.com/webstore/detail/clean-naver/dfbinefheanbhakekbeijfegpfapkemd?hl=ko)
 
 
 <br>
