@@ -22,5 +22,8 @@
             ],
             "css": ["src/css/app.css"]
         }
-    ]
+    ],
+    "background": { 
+        "scripts": ["hot-reload.js"] 
+    }
 }
