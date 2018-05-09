@@ -71,6 +71,9 @@ $ npm run start
 
 ##### 4) 코드 수정 후, 저장하면 webpack이 'dist/bundle.js'로 번들링하고 이 순간 크롬 익스텐션이 재로딩
 
+
+* [hot-reload.js](https://github.com/xpl/crx-hotreload)
+
 <br>
 <br>
 <hr>
