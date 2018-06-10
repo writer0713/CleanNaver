@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -6,7 +7,7 @@ module.exports = {
   entry: [
     './src/js/comment-manager.js',
     './src/js/ad-manager.js',
-    './src/js/app.js',
+    './src/js/app.js'
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -24,7 +25,20 @@ module.exports = {
                 presets: ['env', 'es2015']
             }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       }
     ]
-  }
+  },
+  plugins: [
+    // 기타 플러그인
+    new ExtractTextPlugin({
+      filename: 'app.css',
+    })
+  ]
 };

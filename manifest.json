@@ -14,13 +14,17 @@
     "content_scripts": [
         {
             "matches": [
-                "http://*.news.naver.com/*",
-                "http://entertain.naver.com/*"
+                "http://*.news.naver.com/*"
+            ],
+            "exclude_matches": [
+                "http://*.news.naver.com/*&m_view=1&includeAllCount=true"
             ],
             "js": [
                 "dist/bundle.js"
             ],
-            "css": ["src/css/app.css"]
+            "css": [
+                "dist/app.css"
+            ]
         }
     ],
     "background": { 

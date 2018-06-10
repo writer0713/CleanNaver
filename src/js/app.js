@@ -1,3 +1,4 @@
+import "../css/app.css";
 import { AdManager } from './ad-manager';
 import { CommentManager } from './comment-manager';
 
