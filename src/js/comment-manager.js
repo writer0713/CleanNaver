@@ -8,6 +8,8 @@ export class CommentManager {
         this.initVariables();
         this.init();
         this.bindEvent();
+
+        this.extraProcess();
     }
 
     init() {
@@ -58,6 +60,15 @@ export class CommentManager {
     bindEvent() {
         this.onClickCommentToggleButton();
         this.onClickSideMenuToggleButton();
+    }
+
+    extraProcess() {
+
+        // 뉴스 기사 페이지에서는 우측 메뉴를 닫은 상태가 되도록 설정
+        if(location.href.indexOf('read.nhn') > 0) {
+            $('#side-menu-toggle-btn').click();
+        }
+        
     }
 
     onClickCommentToggleButton() {
