@@ -11,28 +11,37 @@ export class CommentManager {
     }
 
     init() {
-        this.addCustomCSS();
 
-        this.commentBox.before(this.toggleButtonDiv);
+        this.lnbSideList.find('li').remove();
+        this.lnbSideList.append(this.sideMenuToggleButton);
+
+        if(this.outLinkButton.length > 0) {
+            return;
+        }
+
+        this.commentBox.before(this.commentToggleButtonDiv);
         this.commentBox.hide();
 
         this.commentGuideDiv.remove();
 
-        this.toggleButtonDiv.hide();
-        this.commentBox.load(this.naverCommentOutlink, () => {
-            this.toggleButtonDiv.show();
-        });
-        
         $('body').scrollTop();
     }
 
     initVariables() {
-        let currentNewsUrl = location.href;
-        this.naverCommentOutlink = currentNewsUrl + '&m_view=1&includeAllCount=true';
-
+        this.originalWidthOfContent = $('td.content').css('width');
+        this.outLinkButton = $('.article_simplecmt');
         this.commentBox = $('#cbox_module');
         this.commentGuideDiv = $('.comment_guide');
-        this.toggleButtonDiv = $(`
+        this.lnbSideList = $('.lnb_side');
+        this.sideMenuToggleButton = $(`
+            <li class='end'>
+                <button id='side-menu-toggle-btn' 
+                    style='background-color: rgb(2, 198, 111); font-family: sans-serif; width: 10em; cursor: pointer; padding: 3px 5px; border-radius: 4px; color: white'>
+                    우측 메뉴 숨기기
+                </button>
+            </li>
+        `);
+        this.commentToggleButtonDiv = $(`
             <div class="tg-div">
                 <ul class="tg-list">
                     <li class="tg-list-item" id="nc_toggle_btn">
@@ -46,27 +55,12 @@ export class CommentManager {
         
     }
 
-    /**
-     * 댓글을 새로 불러오고 나면 오른쪽 사이드메뉴(div.aside)에 fixed !important 속성이 붙으면서
-     * 레이아웃이 깨지는 이슈가 있음. 이 style을 헤더에 추가해서 해당 이슈 해결.
-     */
-    addCustomCSS() {
-        let customCSS = 
-        `<style>
-          .has_scroll_top div.aside {
-            position: relative !important;
-            top: 0;
-          }
-        </style>`;
-
-        $('head').append(customCSS);
-    }
-
     bindEvent() {
-        this.onClickToggleButton();
+        this.onClickCommentToggleButton();
+        this.onClickSideMenuToggleButton();
     }
 
-    onClickToggleButton() {
+    onClickCommentToggleButton() {
         $('#nc_toggle_btn').on('click', () => {
             let checkbox = $('#nc_toggle_btn input');
             let isChecked = checkbox.prop('checked');
@@ -77,6 +71,26 @@ export class CommentManager {
                 this.commentBox.hide();
             }
         });
+    }
+
+    onClickSideMenuToggleButton() {
+        this.sideMenuToggleButton.on('click', () => {
+            $('td.aside').toggle();
+
+            if(this.isSideMenuHidden()) {
+                $('#side-menu-toggle-btn').text('우측 메뉴 보이기');
+                $('#main_content').css('width', '1080px');
+                $('#spiLayer').css('width', '1080px');
+            } else {
+                $('#side-menu-toggle-btn').text('우측 메뉴 숨기기');
+                $('#main_content').css('width', this.originalWidthOfContent);
+                $('#spiLayer').css('width', this.originalWidthOfContent);
+            }
+        });
+    }
+
+    isSideMenuHidden() {
+        return $('td.aside').css('display') === "none";
     }
 
 }
