@@ -9,7 +9,7 @@ const CleanNaver = new class App {
         commentManager
     )
     {
-        console.log('App constructor');
+        console.log('App constructor11');
         this.adManager = new AdManager();
         this.commentManager = new CommentManager();
     }
