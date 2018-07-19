@@ -14,7 +14,8 @@
     "content_scripts": [
         {
             "matches": [
-                "http://*.news.naver.com/*"
+                "http://*.news.naver.com/*",
+                "https://*.news.naver.com/*"
             ],
             "exclude_matches": [
                 "http://*.news.naver.com/*&m_view=1&includeAllCount=true"
